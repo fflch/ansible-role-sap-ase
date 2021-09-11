@@ -273,3 +273,7 @@ Carregar banco de dados a partir de um dump:
     2> go
     1> online database fflch
     2> go
+
+Dar permissão para o usuário dbmaint na replicação:
+
+   grant role replication_role to dbmaint
