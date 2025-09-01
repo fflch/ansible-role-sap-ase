@@ -248,6 +248,30 @@ Testar conexão do novo usuário:
 
     isql -Ufulano -PSUA_SENHA -SSYBASE -w1000
 
+Listar usuários do sistema e os respectivos acessos aos bancos:
+ 
+    1> use master
+    2> go
+    1> select name, suid, dbname, fullname from syslogins
+    2> go
+
+Remover logins do usuário fulano aos bancos master e fflch.
+
+    1> use fflch
+    2> go
+    1> sp_dropalias fulano
+    2> go
+
+    1> use master
+    2> go
+    1> sp_dropalias fflchdev
+    2> go
+
+Removendo usuário fulano:
+    
+    1> drop login fulano
+    2> go
+
 Gerar SQLs, que podem ser copiadas e aplicadas, que darão 
 permissão de SELECT em todas tabelas do banco fflch:
 
