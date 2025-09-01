@@ -280,6 +280,15 @@ permissão de SELECT em todas tabelas do banco fflch:
     1> select 'grant select on ' + name + ' to fulano' from sysobjects where type = 'U' or type = 'P'
     2> go
 
+Script para conceder ALL em todas as tabelas de um schema:
+
+    1> use fflch
+    2> go
+    
+    1> select 'grant select, insert, update, delete on dbo.' + name + ' to fulano' from sysobjects where type = 'U'
+    2> go
+
+
 Gerar um dump do banco de dados:
 
     isql -Usa -PSuaSenha -SYBASE -w1000
